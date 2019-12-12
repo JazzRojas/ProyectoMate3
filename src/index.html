@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto Mate3</title>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Calistoga|Odibee+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+    <img src="./imagenes/logo-ucv.png" class="logo">
+
+    <div class="menu_bar">
+      <a href="#" class="bt-menu"><span class="icon-list2"></span><span style="margin: auto;">Menu</span><img
+          src="./imagenes/pokemon-logo-png.png" width="15%" style="margin: auto;"></a>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">INICIO</a></li>
+        <li id="botonBuscar"><a href="#botonBuscar">TOP 10 POKEMONS APARICIONES</a></li>
+        <li><a id="tipoPokemones">TIPOS DE POKEMONES</a>
+          <ul id="desple" class="submenu">
+            <li><a id="Normal" href="#">Normal</a></li>
+            <li><a id="Fighting" href="#">Lucha </a></li>
+            <li><a id="Flying" href="#">Volador</a></li>
+            <li><a id="Poison" href="#">Veneno</a></li>
+            <li><a id="Ground" href="#">Tierra</a></li>
+            <li><a id="Rock" href="#">Roca</a></li>
+            <li><a id="Bug" href="#">Bicho</a></li>
+            <li><a id="Ghost" href="#">Fantasma</a></li>
+            <li><a id="Water" href="#">Agua</a></li>
+            <li><a id="Grass" href="#">Planta</a></li>
+            <li><a id="Electric" href="#">Electrico</a></li>
+            <li><a id="Psychic" href="#">Psíquico</a></li>
+            <li><a id="Ice" href="#">Hielo</a></li>
+            <li><a id="Fire" href="#">Fuego</a></li>
+            <li><a id="Dragon" href="#">Dragón</a></li>
+          </ul>
+        <li><a id="selecciona-orden" class="divordenar">ORDEN</a>
+          <ul id="desple" class="submenu">
+                <li><input type="radio" name="ordena" value="asc" id="orAsc"><a href="#">Ascendente</a></li>
+                <li><input type="radio" name="ordena" value="desc" id="orDesc"><a href="#">Descendente</a></li>
+          </ul>
+        </li>
+        <li>
+          <form class="example" style="max-width:500px; margin: auto;">
+            <input type="search" placeholder="Buscar..." id="buscar">
+            <button id="buscaPokemon"><i class="fa fa-search"></i></button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="abc">
+    <figure id="contenedor-pokemons" class="flex-container"></figure>
+  </main>
+  <seccion id="contenedor-modal">
+  </seccion>
+  <script type="module" src="main.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</body>
+<footer>Realizado por Jazmin - Larisa - Ernesto - Daniel - Luis - Julio</footer>
+</html>

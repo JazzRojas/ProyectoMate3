@@ -1,0 +1,82 @@
+// PINTA LOS POKEMONS EN LA PANTALLA DE INICIO 
+export const traerDataPokemon = (arr) => {
+  const newArray = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    newArray.push({
+      identificador: arr[i].id,
+      nombre: arr[i].name,
+      imagen: arr[i].img,
+      altura: arr[i].height,
+      peso: arr[i].weight,
+      tipo: arr[i].type,
+      cant_caramelos: arr[i].candy_count,
+      caramelos: arr[i].candy,
+      multiplicador: arr[i].multipliers,
+      debilidades: arr[i].weaknesses,
+      pre_evolucion: arr[i].prev_evolution,
+      siguiente_evolucion: arr[i].next_evolution,
+    });
+  }
+  return newArray;
+};
+// ORDENA LOS POKEMONS DE FORMA ASCENDENTE Y DESCENDENTE
+export const ordenarAscOdescData = (arr, string) => {
+  if (string === 'orAsc') {
+    arr.sort((p1, p2) => ((p1.name < p2.name) ? -1 : 1));
+    return arr;
+  }
+  arr.sort((p1, p2) => ((p1.name > p2.name) ? -1 : 1));
+  return arr;
+};
+
+// export const filtrarPokemones = (arr, tPokemones) => {
+//   const arregloFiltradoPokemones = [];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     const tipoFiltrado = arr[i].type;
+//     const resultado = tipoFiltrado.filter((elemento) => elemento === tPokemones);
+//     if (resultado !== '') {
+//       arregloFiltradoPokemones.push(arr[i]);
+//     }
+//   }
+//   return arregloFiltradoPokemones;
+// };
+// FILTRA LOS POKEMONS POR TIPO 
+export const filtrarPokemones = (arr, tPokemones) => {
+  const arregloFiltradoPokemones = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    const tipoFiltrado = arr[i].type;
+    for (let j = 0; j < tipoFiltrado.length; j += 1) {
+      if (tipoFiltrado[j] === tPokemones) {
+        arregloFiltradoPokemones.push(arr[i]);
+      }
+    }
+  }
+  return arregloFiltradoPokemones;
+};
+// FILTRA A LOS POKEMONS POR SU OPORTUNIDAD DE APARICION TOP 10 
+export const mostrarTop = (arr) => {
+  arr.sort((p1, p2) => ((p1.spawn_chance > p2.spawn_chance) ? -1 : 1));
+  const arrTop = arr.slice(0, 10);
+  return arrTop;
+};
+// BUSCA EL POKEMON 
+export const buscarPokemon = (arr, nombrePokemonBuscar) => {
+  const arrBuscaPokemon = [];
+  arrBuscaPokemon.push(arr.find((elemento) => elemento.name === nombrePokemonBuscar));
+  return arrBuscaPokemon;
+};
+// BUSCA EL POKEMON COLOCANDO LETRAS 
+export const buscadorPrimerasLetrasNombre = (arr, nombrePokemonBuscar) => {
+  const letras = arr.filter((obj) => obj.name.toLowerCase().startsWith(nombrePokemonBuscar));
+  return letras;
+};
+// BUSCA LAS EVOLUCIONES DEL POKEMON
+export const filtrarPorCandy = (arr, varCaramelos) => {
+  const arrfiltraPokemonPorCandy = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i].candy === varCaramelos) {
+      arrfiltraPokemonPorCandy.push(arr[i].img);
+    }
+  }
+  return arrfiltraPokemonPorCandy;
+};
